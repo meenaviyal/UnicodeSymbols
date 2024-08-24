@@ -1,0 +1,167 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --card-hover-bg: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    --card-hover-text: #ffffff;
+    --toast-bg: #333333;
+    --toast-text: #ffffff;
+    --border-color: #e0e0e0;
+    --link-color: #0066cc;
+}
+
+.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2a2a2a;
+    --card-hover-bg: linear-gradient(145deg, #3a3a3a, #4a4a4a);
+    --card-hover-text: #ffffff;
+    --toast-bg: #ffffff;
+    --toast-text: #333333;
+    --border-color: #4a4a4a;
+    --link-color: #66b3ff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.header-left {
+    max-width: 80%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.feedback-link {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.feedback-link:hover {
+    text-decoration: underline;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+#symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 60px;
+}
+
+.symbol-card {
+    background-color: var(--card-bg);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.symbol-card:hover {
+    background: var(--card-hover-bg);
+    color: var(--card-hover-text);
+}
+
+.symbol {
+    font-size: 2rem;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--toast-bg);
+    color: var(--toast-text);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+    #symbol-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    body {
+        padding: 40px 20px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-left {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .header-right {
+        align-self: flex-end;
+    }
+
+    #symbol-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .symbol {
+        font-size: 1.5rem;
+    }
+}
