@@ -1,8 +1,10 @@
 const symbols = [
-    '·', '•', '—', '|', '↑', '→', '↓', '←', '$', '₹', '€', '©', '®', '™', '×',
-    '¥', '£', '§', '¶', '†', '‡', '…', '≈', '≠', '≤'
+    '$', '₹', '£', '€', '¥',
+    '©', '®', '™', '℠', '×',
+    '·', '•', '—', '|', '…',
+    '¶', '§', '†', '‡', '¤',
+    '↑', '→', '↓', '←', '↔'
 ];
-
 const symbolGrid = document.getElementById('symbol-grid');
 const toast = document.getElementById('toast');
 const themeToggle = document.getElementById('theme-toggle');
